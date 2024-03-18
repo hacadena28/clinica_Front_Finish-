@@ -1,0 +1,51 @@
+<article class="w-full h-screen flex justify-center items-center fondo ">
+  <article class="shadow-xl w-[28%] h-[68%] border bg-white
+    rounded-[.9rem] flex flex-col justify-around items-center
+    animate__animated animate__animated animate__fadeInDown ">
+
+    <section (click)="redirectHome()" class="text-[2rem] h-[30%]  flex items-center ">
+      <img class="w-[15rem]" src="assets/fondo-2.png" alt="fondo-2"/>
+
+    </section>
+    <article *ngIf="showAuth" class="text-white h-[1.3rem] shadow bg-red-500 w-[70%] flex
+         justify-center  rounded-xl border animate__animated animate__fadeInUp">
+      <h1 class="text-[17px]"><b>Numero de documento o contraseña incorrectos</b></h1>
+    </article>
+    <form [formGroup]="loginForm" class="flex flex-col h-[30%] gap-6 w-[20rem]">
+      <div class="w-full">
+        <input formControlName="documentNumber" class="border-[2px] w-full border-solid rounded-md h-[2.4rem] indent-3"
+               type="text"
+               name="documentNumber" placeholder="documentNumber" id="documentNumber" required/>
+        <span *ngIf="showError && loginForm.get('documentNumber')?.hasError('required')"
+              class="text-red-600 text-[12px] indent-5">
+      ingrese el numero de documento
+    </span>
+        <span *ngIf="showError && loginForm.get('documentNumber')?.hasError('documentNumber')"
+              class="text-red-600 text-[12px] indent-5">
+      ingrese un numero de documento valido
+    </span>
+      </div>
+      <div class="w-full">
+        <input formControlName="password" class="border-[2px] w-full border-solid rounded-md h-[2.4rem] indent-3"
+               type="password"
+               id="password" name="password" placeholder="Contraseña" required=""/>
+        <span *ngIf="showError && loginForm.get('password')?.hasError('required')"
+              class="text-red-600 text-[12px] indent-5">
+      La contraseña es requerida
+    </span>
+      </div>
+    </form>
+
+    <section class="w-[20rem] text-[1.1rem] h-[25%] flex flex-col gap-2 ">
+      <button (click)="login()"
+              class="border h-[2.4rem] rounded-md w-full bg-[#2563eb] text-white">
+        <b>Ingresar</b></button>
+      <div class="flex items-center justify-between">
+        <a (click)="recoverPassword()" class="text-[15px] cursor-pointer text-right text-[#6b7280]">Olvide mi
+          contraseña</a>
+        <a (click)="navigateSignup()" class="text-[15px] cursor-pointer text-right text-[#6b7280]">Crea una cuenta</a>
+
+      </div>
+    </section>
+  </article>
+</article>

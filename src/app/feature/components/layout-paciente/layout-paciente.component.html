@@ -1,0 +1,61 @@
+<html>
+
+<head title="Paciente">
+
+  <title>Paciente</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body>
+<article class="w-full h-[100vh]  flex justify-center ">
+
+  <section class="w-[100%] h-[100%] flex flex-col justify-center shadow-md  fondo ">
+    <nav class="flex justify-around items-center h-[5rem] border">
+      <article class="w-[10%] bg-white">
+        <img class="w-[4.5rem]" src="assets/logo_h.png" alt="">
+      </article>
+      <article class=" w-[70%]  flex justify-center items-center ">
+        <ul class="flex gap-[5rem] items-center h-full mb-0">
+          <li>
+            <button class="badge badge-primary p-3 text-xl "
+                    (click)="router.navigate(['clinic/patient/registrar-cita'])">Registrar
+            </button>
+          </li>
+          <li>
+            <button class="badge  badge-primary p-3 text-xl"
+                    (click)="router.navigate(['clinic/patient/consultar-citas'])">Ver citas
+            </button>
+          </li>
+          <li>
+            <button class="badge  badge-primary p-3 text-xl"
+                    (click)="router.navigate(['clinic/patient/historial-clinico'])">Ver historial clinico
+            </button>
+          </li>
+        </ul>
+      </article>
+      <article class="w-[10%]">
+        <button class="badge badge-danger p-3 d-flex align-items-center" (click)="navigateLogin()  " ><img src="../../../../../assets/lg.png" style="filter: invert(100%);" class="w-[1.5rem]  "
+                                                                                 alt="logout"><span>Cerrar sesión</span></button>
+      </article>
+    </nav>
+
+    <div class=" shadow p-3 h-[90%]">
+
+
+      <router-outlet></router-outlet>
+
+
+    </div>
+  </section>
+</article>
+
+
+</body>
+<footer>
+  <app-footer></app-footer>
+</footer>
+
+</html>
+

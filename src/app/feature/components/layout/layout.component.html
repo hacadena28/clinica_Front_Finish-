@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+    </head>
+    <nav class="">
+        <app-navbar></app-navbar>
+    </nav >
+        <main class="w-full flex  h-screen bg-[#f8fafc] flex-col gap-[5rem]">
+            <ng-content ></ng-content>      
+            <app-footer></app-footer>    
+            <router-outlet></router-outlet>
+            
+    </main>
+</html>

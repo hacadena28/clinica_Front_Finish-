@@ -1,0 +1,43 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h2 class="modal-title">Registrar resultados de la cita y finalizarla</h2>
+    <button type="button" class="btn-close" (click)="cerrar()"></button>
+  </div>
+  <div class="modal-body">
+    <article class="w-full  flex justify- items-center">
+      <form [formGroup]="formulario" class="w-full flex gap-5 flex-wrap">
+        <textarea formControlName="description" class="border-[2px] w-[100%] border-solid rounded-md h-[5rem] indent-3"
+                  name="description" placeholder="Descripción" id="description"></textarea>
+        <!--        <textarea formControlName="diagnosis" class="border-[2px] w-[100%] border-solid rounded-md h-[5rem] indent-3" name="diagnosis" placeholder="Diagnóstico" id="diagnosis"></textarea>-->
+        <!--        <textarea formControlName="diagnosis" class="border-[2px] w-[100%] border-solid rounded-md h-[5rem] indent-3" name="diagnosis" placeholder="Diagnóstico" id="diagnosis"></textarea>-->
+        <div class="relative w-[100%]">
+          <select formControlName="diagnosis"
+                  class="border-[2px] w-[calc(90%-2rem)] border-solid rounded-md h-[2.5rem] indent-3" name="diagnosis"
+                  id="diagnosis">
+            <option *ngFor="let enfermedad of enfermedades" [value]="enfermedad.name">{{ enfermedad.name }}</option>
+          </select>
+          <!-- Botón para agregar enfermedades -->
+          <button type="button"
+                  class=" border-[2px] border-solid rounded-md h-[2.5rem] absolute right-0 top-0 h-[2.5rem] px-2"
+                  (click)="agregarEnfermedad()">
+            Agregar
+          </button>
+        </div>
+
+        <div class="relative pt-2 border-[2px] w-[100%] border-solid rounded-md h-[auto] indent-3">
+          <ul>
+            <li class="mt-1 text-center" *ngFor="let enfermedad of listaEnfermedades" [value]="enfermedad">{{ enfermedad}}</li>
+          </ul>
+
+        </div>
+
+        <textarea formControlName="treatment" class="border-[2px] w-[100%] border-solid rounded-md h-[5rem] indent-3"
+                  name="treatment" placeholder="Tratamiento" id="treatment"></textarea>
+      </form>
+    </article>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="cerrar()">Cerrar</button>
+    <button type="button" class="btn btn-success" (click)="agregarHistoria()">Aceptar</button>
+  </div>
+</div>

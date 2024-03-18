@@ -1,0 +1,48 @@
+<section class="w-[100%] h-screen bg-blue-50 flex flex-col items-center gap-[10rem] ">
+  <div class="flex h-[8rem] justify-center items-center">
+    <img class="cursor-pointer" src="assets/logo_h.png" width="90"/>
+  </div>
+  <div>
+    <ul class="flex flex-col flex items-center">
+      <li class="h-[5rem]  w-[100%] mx-5">
+        <button (click)="redirectToEps()" class="bt-w  w-[100%] text-[1.1rem]" mat-button>
+          <mat-icon class="icon-w " fontIcon="event"></mat-icon>
+          Eps
+        </button>
+      </li>
+      <li class="h-[5rem]  w-[100%] mx-5">
+        <button (click)="redirectToDisease()" class="bt-w  w-[100%] text-[1.1rem]" mat-button>
+          <mat-icon class="icon-w " fontIcon="bug_report"></mat-icon>
+          Enfermedades
+        </button>
+      </li>
+      <li class="h-[4rem]  w-[100%] justify-start mx-5">
+        <button (click)="redirectToDoctor()" class=" bt-w w-[100%] h-full" mat-button>
+          <mat-icon class="" fontIcon="local_hospital"></mat-icon>
+          Doctores
+        </button>
+      </li>
+
+      <li class="h-[4rem]  w-[100%] justify-start mx-5">
+        <button (click)="redirectToPatient()" class=" bt-w w-[100%] h-full" mat-button>
+          <mat-icon class="" fontIcon="person"></mat-icon>
+          Pacientes
+        </button>
+      </li>
+
+      <li class="h-[4rem]  w-[100%] justify-start mx-5">
+        <button (click)="redirectToAdmin()" class=" bt-w w-[100%] h-full" mat-button>
+          <mat-icon class="" fontIcon="supervisor_account"></mat-icon>
+          Admin
+        </button>
+      </li>
+      <li class="h-[4rem]  w-[100%] justify-start mx-5">
+        <button (click)="redirectToDashboard()" class=" bt-w w-[100%] h-full" mat-button>
+          <mat-icon class="" fontIcon="supervisor_account"></mat-icon>
+          Estadisticas
+        </button>
+      </li>
+
+    </ul>
+  </div>
+</section>

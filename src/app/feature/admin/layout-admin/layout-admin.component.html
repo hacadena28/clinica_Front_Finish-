@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <article class="w-full h-full flex">
+        <app-sidebar-admin></app-sidebar-admin>
+        <section class="w-[91%] h-full flex flex-col shadow-md  fondo ">
+
+            <div class="w-full flex  h-[5rem] justify-between items-center border  ">
+                <h1 class=" w-[10%] text-center text-[1.5rem] text-[#2563eb]"><b>Admin</b></h1>
+                <input class=" bg- rounded-xl indent-5 w-[35%] h-[2.5rem] border-[3px]" placeholder="Buscar"/>
+               <div class="flex flex-col justify-center w-[5rem] h-[4rem] ">
+                <button (click)="navigateHome()"  class="w-[1.8rem]"><img src="../../../../../assets/lg.png" class="w-[1.5rem]  " alt="logout"></button>
+               </div>
+            </div>
+            <div class="w-full h-full">
+                <div class="w-full flex justify-center relative bg-white fondo  ">
+                  <ng-content></ng-content>
+                </div>
+            </div>
+        </section>
+    </article>
+
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">Confirmar Eliminación</h5>
+    <button type="button" class="btn-close" (click)="cancelarAccion()"></button>
+  </div>
+  <div class="modal-body">
+    <p>¿Estás seguro de que deseas eliminar este elemento?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="cancelarAccion()">Cancelar</button>
+    <button type="button" class="btn btn-danger" (click)="confirmarAccion()">Eliminar</button>
+  </div>
+</div>

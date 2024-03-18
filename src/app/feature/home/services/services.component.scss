@@ -1,0 +1,13 @@
+.fondo{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1536' height='523' preserveAspectRatio='none' viewBox='0 0 1536 523'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1016%26quot%3b)' fill='none'%3e%3cpath d='M -598.1716590639965%2c138.5 C -495.77%2c165.5 -290.97%2c276.5 -86.17165906399646%2c273.5 C 118.63%2c270.5 221.03%2c115.5 425.82834093600354%2c123.5 C 630.63%2c131.5 733.03%2c288.3 937.8283409360035%2c313.5 C 1142.63%2c338.7 1330.19%2c229.9 1449.8283409360035%2c249.5 C 1569.46%2c269.1 1518.77%2c379.1 1536%2c411.5' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -585.5140797772428%2c457.5 C -483.11%2c410.1 -278.31%2c233.5 -73.5140797772429%2c220.5 C 131.29%2c207.5 233.69%2c419.5 438.4859202227571%2c392.5 C 643.29%2c365.5 745.69%2c78.5 950.4859202227572%2c85.5 C 1155.29%2c92.5 1345.38%2c393.5 1462.4859202227572%2c427.5 C 1579.59%2c461.5 1521.3%2c289.9 1536%2c255.5' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -1019.9865860015298%2c169.5 C -917.59%2c212.7 -712.79%2c387.5 -507.9865860015297%2c385.5 C -303.19%2c383.5 -200.79%2c148.9 4.013413998470298%2c159.5 C 208.81%2c170.1 311.21%2c431.1 516.0134139984702%2c438.5 C 720.81%2c445.9 824.02%2c202.5 1028.0134139984702%2c196.5 C 1232.01%2c190.5 1434.4%2c366.1 1536%2c408.5' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -114.48053123598038%2c277.5 C -12.08%2c266.9 192.72%2c188.5 397.5194687640196%2c224.5 C 602.32%2c260.5 704.72%2c452.9 909.5194687640196%2c457.5 C 1114.32%2c462.1 1216.72%2c269.3 1421.5194687640196%2c247.5 C 1626.32%2c225.7 1910.62%2c358.9 1933.5194687640196%2c348.5 C 1956.42%2c338.1 1615.5%2c226.1 1536%2c195.5' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1016'%3e%3crect width='1536' height='523' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+}
+
+.carousel-image {
+  width: 100%; /* Ancho deseado */
+  height: 600px; /* Alto deseado */
+  object-fit:cover; /* Controla cómo se ajusta la imagen dentro del tamaño especificado */
+  opacity: 0.7 ;
+  background-color: #93c5fd;
+  border-radius: 10px;
+}

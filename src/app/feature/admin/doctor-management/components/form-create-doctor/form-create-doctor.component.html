@@ -1,0 +1,144 @@
+<div class="modal-content w-[90vw]">
+  <div class="modal-header">
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()">
+      <mat-icon fontIcon="close"></mat-icon>
+    </button>
+  </div>
+  <article class="w-full  flex justify- items-center">
+    <section class="w-[60%] fondoDoctor h-full flex justify-center items-center">
+      <img src="assets/doctorForm.jpg"/>
+    </section>
+    <section class="w-[40%] h-full flex flex-col gap-2 justify-center items-center">
+      <h1 class="text-xl">Crear Doctor</h1>
+      <div class="w-[85%] h-[50%]">
+
+
+        <form [formGroup]="formulario" class="w-full h-full flex gap-2 flex-wrap">
+
+          <div class="w-full flex items-center">
+            <input formControlName="firstName" class="border-[1px] w-full border-solid rounded-md h-[1.8rem] px-2"
+                   type="text" name="firstName" placeholder="Primer nombre" id="firstName"/>
+            <p class="position-relative text-red-500"
+               *ngIf="formulario.get('firstName')?.invalid && formulario.get('firstName')?.touched">
+              obligatoria</p>
+          </div>
+
+          <div class="w-full flex items-center">
+            <input formControlName="secondName" class="border-[1px] w-full border-solid rounded-md h-[1.8rem] px-2"
+                   type="text" name="secondName" placeholder="Segundo nombre" id="secondName"/>
+            <p class="position-relative text-red-500"
+               *ngIf="formulario.get('secondName')?.invalid && formulario.get('secondName')?.touched">
+              obligatoria</p>
+          </div>
+          <div class="w-full flex items-center">
+            <input formControlName="lastName" class="border-[1px] w-full border-solid rounded-md h-[1.8rem] px-2"
+                   type="text" name="lastName" placeholder="Primer apellido" id="lastName"/>
+            <p class="position-relative text-red-500"
+               *ngIf="formulario.get('lastName')?.invalid && formulario.get('lastName')?.touched">
+              obligatoria</p>
+          </div>
+          <div class="w-full flex items-center">
+            <input formControlName="secondLastName" class="border-[1px] w-full border-solid rounded-md h-[1.8rem] px-2"
+                   type="text" name="secondLastName" placeholder="Segundo apellido" id="secondLastName"/>
+            <p class="position-relative text-red-500"
+               *ngIf="formulario.get('secondLastName')?.invalid && formulario.get('secondLastName')?.touched">
+              obligatoria</p>
+          </div>
+
+          <div class="w-full flex items-center">
+            <select formControlName="documentType" class="border-[1px] w-full border-solid rounded-md h-[1.8rem] px-2"
+                    id="documentType">
+              <option value="" disabled selected>Selecciona un tipo de documento</option>
+              <option *ngFor="let type of documentTypes" [value]="type.key">
+                {{ type.value }}
+              </option>
+            </select>
+            <p class="position-relative text-red-500"
+               *ngIf="formulario.get('documentType')?.invalid && formulario.get('documentType')?.touched">
+              obligatoria</p>
+          </div>
+
+          <div class="w-full flex items-center">
+            <input formControlName="documentNumber" class="border-[1px] w-full border-solid rounded-md h-[1.8rem] px-2"
+                   type="text" name="documentNumber" placeholder="Numero de documento" id="documentNumber"/>
+            <p class="position-relative text-red-500"
+               *ngIf="formulario.get('documentNumber')?.invalid && formulario.get('documentNumber')?.touched">
+              obligatoria</p>
+          </div>
+
+          <div class="w-full flex items-center">
+            <input formControlName="email" class="border-[1px] w-full border-solid rounded-md h-[1.8rem] px-2"
+                   type="email" name="email" placeholder="Email" id="email"/>
+            <p class="position-relative text-red-500"
+               *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched">
+              obligatoria</p>
+          </div>
+
+          <div class="w-full flex items-center">
+            <input formControlName="phone" class="border-[1px] w-full border-solid rounded-md h-[1.8rem] px-2"
+                   type="number" name="phone" placeholder="Numero telefonico" id="phone"/>
+            <p class="position-relative text-red-500"
+               *ngIf="formulario.get('phone')?.invalid && formulario.get('phone')?.touched">
+              obligatoria</p>
+          </div>
+
+          <div class="w-full flex items-center">
+            <input formControlName="address" class="border-[1px] w-full border-solid rounded-md h-[1.8rem] px-2"
+                   type="text" name="address" placeholder="Direccion" id="address"/>
+            <p class="position-relative text-red-500"
+               *ngIf="formulario.get('address')?.invalid && formulario.get('address')?.touched">
+              obligatoria</p>
+          </div>
+
+          <div class="w-full flex items-center">
+            <input formControlName="birthdate" class="border-[1px] w-full border-solid rounded-md h-[1.8rem] px-2"
+                   type="date" name="birthdate" placeholder="Fecha de nacimiento" id="birthdate"/>
+            <p class="position-relative text-red-500"
+               *ngIf="formulario.get('birthdate')?.invalid && formulario.get('birthdate')?.touched">
+              obligatoria</p>
+          </div>
+
+          <div class="w-full flex items-center">
+            <select formControlName="specialization" class="border-[1px] w-full border-solid rounded-md h-[1.8rem] px-2"
+                    id="specialization">
+              <option value="" disabled selected>Selecciona una especializacion</option>
+              <option *ngFor="let type of specialization" [value]="type">
+                {{ type }}
+              </option>
+            </select>
+            <p class="position-relative text-red-500"
+               *ngIf="formulario.get('specialization')?.invalid && formulario.get('specialization')?.touched">
+              obligatoria</p>
+          </div>
+
+
+          <div class="w-full flex items-center">
+            <input formControlName="password" class="border-[1px] w-full border-solid rounded-md h-[1.8rem] px-2"
+                   type="password" name="password" placeholder="Contraseña" id="password"/>
+            <p class="position-relative text-red-500"
+               *ngIf="formulario.get('password')?.invalid && formulario.get('password')?.touched">
+              obligatoria</p>
+          </div>
+
+
+          <div class="w-full flex items-center">
+            <input formControlName="confirmPassword"
+                   class="border-[1px] w-[100%] border-solid rounded-md h-[1.8rem] px-2"
+                   type="password" name="confirmPassword" placeholder="Confirmar contraseña" id="confirmPassword"/>
+            <p class="position-relative text-red-500"
+               *ngIf="formulario.get('confirmPassword')?.invalid && formulario.get('confirmPassword')?.touched">
+              obligatoria</p>
+          </div>
+        </form>
+      </div>
+      <div class="w-[80%]">
+        <button class="border h-[1.8rem] rounded-md w-full bg-[#2563eb] text-white text-sm"
+                type="submit"
+                (click)="!validateForm() || registerDoctor()"
+        >
+          <b>Registrar Doctor</b></button>
+      </div>
+    </section>
+  </article>
+
+</div>

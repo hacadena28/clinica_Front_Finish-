@@ -1,0 +1,19 @@
+.activa{ background-color: #008000;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;}
+
+  .inactiva{background-color: #FF0000;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;}
+
+.mat-chip.activo {
+  background-color: green; /* Color verde para estado activo */
+  color: white; /* Texto en color blanco */
+}
+
+.mat-chip.inactivo {
+  background-color: red; /* Color rojo para estado inactivo */
+  color: white; /* Texto en color blanco */
+}

@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.shadow{
+  box-shadow: 0px 2px 16px -2px rgba(63,61,61,0.75);
+  -webkit-box-shadow: 0px 2px 16px -2px rgba(63,61,61,0.75);
+  -moz-box-shadow: 0px 2px 16px -2px rgba(63,61,61,0.75);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.fondo{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='500' preserveAspectRatio='none' viewBox='0 0 1920 500'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3cpath d='M -401.56824024741%2c423 C -273.57%2c384.8 -17.57%2c246.6 238.43175975259%2c232 C 494.43%2c217.4 622.43%2c377.8 878.43175975259%2c350 C 1134.43%2c322.2 1262.43%2c75.6 1518.43175975259%2c93 C 1774.43%2c110.4 2078.12%2c431.8 2158.43175975259%2c437 C 2238.75%2c442.2 1967.69%2c182.6 1920%2c119' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -565.2736166273734%2c373 C -437.27%2c317.4 -181.27%2c81.4 74.72638337262666%2c95 C 330.73%2c108.6 458.73%2c429.2 714.7263833726266%2c441 C 970.73%2c452.8 1098.73%2c170.2 1354.7263833726267%2c154 C 1610.73%2c137.8 1881.67%2c358 1994.7263833726267%2c360 C 2107.78%2c362 1934.95%2c203.2 1920%2c164' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -1277.4634058468018%2c269 C -1149.46%2c238.8 -893.46%2c115.8 -637.463405846802%2c118 C -381.46%2c120.2 -253.46%2c274 2.5365941531980525%2c280 C 258.54%2c286 386.54%2c144.6 642.536594153198%2c148 C 898.54%2c151.4 1027.04%2c302.2 1282.5365941531982%2c297 C 1538.03%2c291.8 1792.51%2c157 1920%2c122' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -135.79759369314513%2c256 C -7.8%2c250 248.2%2c198.8 504.20240630685487%2c226 C 760.2%2c253.2 888.2%2c407.6 1144.2024063068548%2c392 C 1400.2%2c376.4 1528.2%2c147.4 1784.2024063068548%2c148 C 2040.2%2c148.6 2397.04%2c391.8 2424.2024063068548%2c395 C 2451.36%2c398.2 2020.84%2c210.2 1920%2c164' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1920' height='500' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.fondoDoctor{
+  background-image: url("https://www.freepik.es/vector-gratis/doctor-al-lado-portapapeles_2094252.htm#query=formulario%20medico&position=8&from_view=keyword&track=ais&uuid=aee9fcc4-bd73-4eea-bf1a-63a6cd63b9b2");
+  background-repeat: no-repeat;
+
+
+}

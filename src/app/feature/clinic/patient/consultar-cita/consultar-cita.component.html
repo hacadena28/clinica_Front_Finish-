@@ -1,0 +1,99 @@
+<main class="py-3rem flex justify-center fondo h-[90%]">
+  <article class="w-90 flex justify-center flex-col items-center">
+    <table
+      class="bg-white border w-[90%] h-[10%]  shadow-lg table-fixed"
+    >
+      <thead class="h-[5px] border rounded-xl">
+      <tr class="text-left indent-5">
+        <th class="border bg-slate-200 w-[15%]">Paciente</th>
+        <th class="border bg-slate-200 w-[20%]">Descripcion</th>
+        <th class="border bg-slate-200 w-[20%]">Fecha y Hora</th>
+        <th class="border bg-slate-200 w-[15%]">Doctor</th>
+        <th class="border bg-slate-200 w-[10%]">Estado</th>
+        <th class="border bg-slate-200 w-[20%]">Acciones</th>
+      </tr>
+      </thead>
+      <tbody class="indent-5 border border-spacing-2">
+      <tr class="message" *ngIf="data.length === 0">
+        <td class="text-[1.5rem] text-center" colspan="7">
+          <b>No hay citas agendadas</b>
+        </td>
+      </tr>
+      <tr *ngFor="let item of data | paginate: { itemsPerPage: perPage, currentPage: page, totalItems: total }">
+
+
+        <td class="w-[15%] border text-xl">{{ item.patientFullName }}</td>
+        <td class="w-[20%] border">{{ item.description }}</td>
+        <td class="w-[20%] border">{{ item.appointmentStartDate | date: 'yyyy-MM-dd HH:mm a' }}</td>
+        <td class="w-[15%] border text-xl">{{ item.doctorFullName }}</td>
+        <td class="w-[10%]  border " [ngSwitch]="item.state">
+          <div class="w-full flex justify-center ">
+
+            <ng-container *ngSwitchCase="'Scheduled'">
+              <button STYLE="background-color: #637cfa; color: white" mat-raised-button color="primary"
+                      class="m-2 rounded p-2 scheduled-state">
+                <span>{{ getStateName(item.state) }}</span>
+              </button>
+            </ng-container>
+            <ng-container *ngSwitchCase="'Rescheduled'">
+              <button STYLE="background-color: #00a6ff; color: white" mat-raised-button color="accent"
+                      class="m-2 rounded p-2 rescheduled-state">
+                <span>{{ getStateName(item.state) }}</span>
+              </button>
+            </ng-container>
+            <ng-container *ngSwitchCase="'Canceled'">
+              <button STYLE="background-color: #df5757; color: white" mat-raised-button color="warn"
+                      class="m-2 rounded p-2 canceled-state">
+                <span>{{ getStateName(item.state) }}</span>
+              </button>
+            </ng-container>
+            <ng-container *ngSwitchCase="'Attended'">
+              <button mat-raised-button STYLE="background-color: #08c736; color: white"
+                      class="m-2 rounded p-2 attended-state">
+                <span>{{ getStateName(item.state) }}</span>
+              </button>
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              <span>{{ item.state }}</span>
+            </ng-container>
+          </div>
+        </td>
+        <td class="w-[20%]  border">
+          <div class="w-full flex justify-center ">
+            <button *ngIf="showReagendarButton(item.state)" STYLE="background-color: #00bcff; color: white"
+                    mat-raised-button class="m-2 rounded p-2 align-items-center d-flex" (click)="openModalReagendar(item)">
+              <mat-icon>event</mat-icon>
+              <span>Reagendar</span>
+            </button>
+            <button *ngIf="showCancelarButton(item.state)" STYLE="background-color: #df5757; color: white"
+                    mat-raised-button color="warn" class="m-2 rounded p-2 align-items-center d-flex" (click)="openModalCancelar(item)">
+              <mat-icon>cancel</mat-icon>
+              <span>Cancelar</span>
+            </button>
+
+            <button *ngIf="item.state === 'Canceled' || item.state === 'Attended' " STYLE="background-color: #717171; color: white" mat-raised-button
+                    class="m-2 rounded p-2">
+
+              <span>Sin Acciones</span>
+            </button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+
+      <tfoot>
+      <tr>
+        <td colspan="6"> <!-- El número de columnas debe coincidir con la cantidad de columnas en la tabla -->
+          <div class="d-flex justify-content-center align-items-center">
+            <pagination-controls
+              [previousLabel]="'Anterior'"
+              [nextLabel]="'Siguiente'"
+              (pageChange)="pageChanged($event)">
+            </pagination-controls>
+          </div>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+  </article>
+</main>

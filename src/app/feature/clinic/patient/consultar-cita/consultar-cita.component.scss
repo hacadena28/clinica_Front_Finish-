@@ -1,0 +1,77 @@
+.bs-datepicker {
+  width: 100%;
+}
+
+.aprobada {
+  background-color: #008000;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+}
+
+.rechazada {
+  background-color: #FF0000;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+}
+
+.pendiente {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: #FFD700;
+}
+
+.bs-datepicker button.bs-datepicker-toggle {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+.bs-datepicker button.bs-calendar-clear {
+  color: #f00;
+}
+
+.bs-datepicker.bs-datepicker-container {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bs-datepicker .bs-days-container .bs-days-calendar .bs-calendar-head thead th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+
+.bs-datepicker .bs-days-container .bs-days-calendar .bs-calendar-body .bs-days-calendar-day.selectable {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.bs-datepicker .bs-months-calendar .bs-calendar-head thead th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+
+/* tu-estilos.css */
+
+.scheduled-state {
+  color: #1976D2; /* Azul para 'Scheduled' */
+}
+
+.rescheduled-state {
+  color: #FFA000; /* Amarillo anaranjado para 'Rescheduled' */
+}
+
+.canceled-state {
+  color: #E53935; /* Rojo para 'Canceled' */
+}
+
+.attended-state {
+  color: #43A047; /* Verde para 'Attended' */
+}
+
+.border-collapse {
+  border-collapse: collapse;
+}

@@ -1,0 +1,41 @@
+/* Estilo para el input del calendario */
+.bs-datepicker {
+  width: 100%;
+}
+
+/* Cambiar el color del botón de abrir el calendario */
+.bs-datepicker button.bs-datepicker-toggle {
+  background-color: #007bff; /* Cambia el color de fondo */
+  color: #fff; /* Cambia el color del texto */
+  border: none; /* Elimina el borde */
+}
+
+/* Cambiar el color del botón de limpiar el calendario */
+.bs-datepicker button.bs-calendar-clear {
+  color: #f00; /* Cambia el color del texto a rojo */
+}
+
+/* Estilo para el calendario desplegado */
+.bs-datepicker.bs-datepicker-container {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+}
+
+/* Estilo para los días de la semana en el calendario */
+.bs-datepicker .bs-days-container .bs-days-calendar .bs-calendar-head thead th {
+  background-color: #007bff; /* Cambia el color de fondo de los encabezados de días */
+  color: #fff; /* Cambia el color del texto de los encabezados de días */
+}
+
+/* Estilo para los días seleccionables en el calendario */
+.bs-datepicker .bs-days-container .bs-days-calendar .bs-calendar-body .bs-days-calendar-day.selectable {
+  background-color: #007bff; /* Cambia el color de fondo de los días seleccionables */
+  color: #fff; /* Cambia el color del texto de los días seleccionables */
+}
+
+/* Estilo para los días de la semana en el encabezado del calendario */
+.bs-datepicker .bs-months-calendar .bs-calendar-head thead th {
+  background-color: #007bff; /* Cambia el color de fondo de los encabezados de meses */
+  color: #fff; /* Cambia el color del texto de los encabezados de meses */
+}
+
+

@@ -1,0 +1,15 @@
+<article class="w-full p-0 flex justify-center items-center ">
+  <div class=" w-full   h-full flex justify-center">
+    <div class="row w-full shadow-md">
+      <div class="col w-full">
+        <carousel [interval]="3000"> <!-- Intervalo de 3000 milisegundos (3 segundos) -->
+          <slide class="" *ngFor="let image of images">
+            <img [src]="image.path" class="carousel-image" alt="Slide">
+          </slide>
+        </carousel>
+      </div>
+    </div>
+  </div>
+
+
+</article>

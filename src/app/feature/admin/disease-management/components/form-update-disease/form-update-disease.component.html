@@ -1,0 +1,32 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="btn-close" aria-label="Close" (click)="close()">
+            <mat-icon fontIcon="close"></mat-icon>
+        </button>
+    </div>
+    <article class="w-full  flex justify- items-center">
+        <section class="w-[60%] fondo h-full flex justify-center items-center">
+            <img src="assets/diente.jpg"/>
+        </section>
+        <section class="w-[40%] h-full flex flex-col gap-2 justify-center items-center">
+            <h1 class="text-xl">Actualizar Enfermedad</h1>
+            <div class="w-[85%] h-[50%]">
+                <form [formGroup]="formulario" class="w-full h-full flex gap-2 flex-wrap">
+                    <input formControlName="name" class="border-[1px] w-full border-solid rounded-md h-[1.8rem] px-2" type="text"
+                           name="name" placeholder="Nombre de Enfermedad" id="name"/>
+                    <div *ngIf="formulario.get('name')?.invalid && formulario.get('name')?.touched">
+                        <p class="text-red-500">El nombre de la Enfermedad es obligatorio</p>
+                    </div>
+                </form>
+            </div>
+            <div class="w-[80%]">
+                <button class="border h-[1.8rem] rounded-md w-full bg-[#2563eb] text-white text-sm"
+                        type="submit"
+                        (click)="!validateForm() || updateDisease()"
+                ><b>Actualizar
+                    Enfermedad</b></button>
+            </div>
+        </section>
+    </article>
+
+</div>

@@ -1,0 +1,20 @@
+
+<section class="w-[100%] h-screen bg-blue-50 flex flex-col items-center gap-[10rem] ">
+  <div class="flex h-[8rem] justify-center items-center">
+    <img class="cursor-pointer" src="assets/logo_h.png" width="90"/>
+  </div>
+  <div>
+    <ul class="flex flex-col flex items-center">
+      <li class="h-[5rem]  w-[100%] mx-5">
+        <button (click)="redirectToHistorial()" class="bt-w  w-[100%] text-[1.1rem]" mat-button>
+          <mat-icon class="icon-w " fontIcon="event"></mat-icon>
+          Historial Medico</button></li>
+      <li class="h-[4rem]  w-[100%] justify-start mx-5">
+        <button (click)="redirectToAgenda()" class=" bt-w w-[100%] h-full" mat-button>
+          <mat-icon class="" fontIcon="local_hospital"></mat-icon>
+          Citas</button></li>
+    </ul>
+  </div>
+</section>
+
+

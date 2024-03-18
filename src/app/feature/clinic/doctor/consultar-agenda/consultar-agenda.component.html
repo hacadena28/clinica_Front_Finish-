@@ -1,0 +1,62 @@
+<main class="py-3rem fondo ">
+  <article class="w-100 flex justify-center flex-col items-center">
+    <div class="w-[90%]">
+      <div *ngIf="data.length === 0" class="text-[1.5rem] text-center">
+        <b>No hay citas agendadas</b>
+      </div>
+        <div class="w-100 overflow-auto max-h-[85vh]">
+
+      <div class="flex flex-wrap justify-around ">
+        <div *ngFor="let item of data" class="mb-4">
+          <mat-card style="padding: 10px; background-color: #f5f5f5; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{ 'Paciente: ' + item.patientFullName }}</mat-card-title>
+              <mat-card-subtitle>{{ 'Fecha cita: ' + (item.appointmentStartDate | date: 'yyyy-MM-dd HH:mm a') }}</mat-card-subtitle>
+            </mat-card-header>
+            <div class="divider"></div>
+            <mat-card-content class="mt-4">
+              <p><strong>Descripción:</strong> {{ item.description }}</p>
+              <p><strong>Doctor:</strong> {{ item.doctorFullName }}</p>
+              <p [ngSwitch]="item.state" class="mb-2"><strong>Estado:</strong>
+                <ng-container *ngSwitchCase="'Scheduled'">
+                  <button STYLE="background-color: #637cfa; color: white; font-size: 12px; padding: 6px;" mat-raised-button color="primary" class="m-2 rounded p-2 scheduled-state">
+                    <span>{{ getStateName(item.state) }}</span>
+                  </button>
+                </ng-container>
+                <ng-container *ngSwitchCase="'Rescheduled'">
+                  <button STYLE="background-color: #00a6ff; color: white" mat-raised-button color="accent" class="m-2 rounded p-2 rescheduled-state">
+                    <span>{{ getStateName(item.state) }}</span>
+                  </button>
+                </ng-container>
+                <ng-container *ngSwitchCase="'Canceled'">
+                  <button STYLE="background-color: #df5757; color: white" mat-raised-button color="warn" class="m-2 rounded p-2 canceled-state">
+                    <span>{{ getStateName(item.state) }}</span>
+                  </button>
+                </ng-container>
+                <ng-container *ngSwitchCase="'Attended'">
+                  <button mat-raised-button STYLE="background-color: #08c736; color: white" class="m-2 rounded p-2 attended-state">
+                    <span>{{ getStateName(item.state) }}</span>
+                  </button>
+                </ng-container>
+                <ng-container *ngSwitchDefault>
+                  <span>{{ item.state }}</span>
+                </ng-container>
+              </p>
+            </mat-card-content>
+            <div class="divider"></div>
+            <mat-card-actions class="align-items-center d-flex justify-center">
+              <button *ngIf="showReagendarButton(item.state)" mat-raised-button class="m-0 rounded p-2" style="background-color: #008cff; color: white; font-size: 12px; padding: 6px;" (click)="openModalReagendar(item)">
+                <span>Finalizar</span>
+              </button>
+              <button *ngIf="showCancelarButton(item.state)" mat-raised-button class="ml-2 rounded p-2 btn-sm" style="background-color: #ff0000; color: white; font-size: 12px; padding: 6px;" (click)="openModalCancelar(item)">
+                <span>Cancelar</span>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      </div>
+    </div>
+  </article>
+</main>

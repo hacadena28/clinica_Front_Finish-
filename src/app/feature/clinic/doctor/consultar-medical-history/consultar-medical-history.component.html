@@ -1,0 +1,41 @@
+<div class="h-full ">
+
+  <div *ngIf="isDoctor">
+
+    <input [(ngModel)]="valorBusqueda" id="buscar"
+           class="position-absolute top-4 right-96 bg- rounded-xl indent-5 w-[35%] h-[2.5rem] border-[3px]"
+           placeholder="Buscar"/>
+    <button type="button" class="btn btn-primary position-absolute top-4 right-72" (click)="buscar()">
+      <i class=""></i> Buscar
+    </button>
+  </div>
+  <div *ngIf="data.length === 0" class="text-[1.5rem] text-center">
+    <b>No hay historial medico</b>
+  </div>
+  <div *ngIf="data.length > 0">
+    <h2 class=" w-100 badge badge-info">{{ data[0].fullName }}</h2>
+  </div>
+
+  <div class="overflow-auto max-h-[80vh]"
+       [ngClass]="{ 'max-h-[80vh]': isDoctor, 'max-h-[70vh]':!isDoctor}">
+
+    <div *ngFor="let li of data" class="w-[100%] d-flex justify-content-center text-center">
+      <div class=" card justify-center w-[100%] text-center">
+        <h2 class=" w-100 badge badge-info">{{ li.date | date: 'fullDate' }}</h2>
+        <p>Descripcion</p>
+        <h5>{{ li.description }}</h5>
+        <p>Diagnostico</p>
+        <ul>
+          <li *ngFor="let diagnosisItem of li.diagnosis">{{ diagnosisItem.disease.name }}</li>
+        </ul>
+
+        <p>Tratamiento</p>
+        <h5>
+          {{ li.treatment }}
+        </h5>
+      </div>
+    </div>
+
+  </div>
+</div>
+

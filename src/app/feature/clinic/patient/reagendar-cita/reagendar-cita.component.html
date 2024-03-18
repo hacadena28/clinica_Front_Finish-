@@ -1,0 +1,68 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">Reagendar Cita</h5>
+    <button type="button" class="btn-close" (click)="cerrar()"></button>
+  </div>
+  <div class="modal-body">
+    <form
+      [formGroup]="formulario"
+      class="flex flex-wrap w-full justify-between"
+    >
+
+      <div class="w-[48%] mb-4">
+
+        <label class="block text-sm text-gray-700 font-bold">
+          Fecha
+        </label>
+        <input
+          class="border w-full h-10 rounded-md px-3"
+
+          formControlName="date" type="date" required/>
+        <div *ngIf="formulario.get('date')?.invalid && formulario.get('date')?.touched">
+          <p class="text-red-500">La fecha es obligatoria.</p>
+        </div>
+      </div>
+
+
+
+        <div class="w-[50%] mb-4">
+
+          <label class="block text-sm text-gray-700 font-bold">
+            Hora
+          </label>
+          <select class="border w-40 h-10 rounded-md px-3" formControlName="hour">
+            <option value="" disabled selected>Horas</option>
+            <option *ngFor="let hour of hours" [value]="hour.value">{{ hour.name }}</option>
+          </select>
+          <div *ngIf="formulario.get('hour')?.invalid && formulario.get('hour')?.touched">
+            <p class="text-red-500">La Hora es obligatoria.</p>
+          </div>
+        </div>
+        <div class="w-[50%] mb-4">
+
+          <label class="block text-sm text-gray-700 font-bold">
+            Minutos
+          </label>
+          <select class="border w-40 h-10 rounded-md px-3" formControlName="minute">
+            <option value="" disabled selected>Minutos</option>
+            <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
+          </select>
+          <div *ngIf="formulario.get('minute')?.invalid && formulario.get('minute')?.touched">
+            <p class="text-red-500">Los minutos son obligatoria.</p>
+          </div>
+        </div>
+
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="cerrar()">Cancelar</button>
+    <button
+      type="submit"
+      (click)="!validateForm() || reagendarCita()"
+      class="bg-blue-500 text-white px-4 py-2 rounded-md"
+    >
+      Guardar cambio
+    </button>
+  </div>
+</div>
+
